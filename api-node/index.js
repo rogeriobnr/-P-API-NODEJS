@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+app.use(express.json());
 
 app.get('/users', (req, res) => {
 
@@ -18,12 +18,12 @@ app.get('/users', (req, res) => {
 
         ]
 
-    return res.json(user);
+    return res.json(users);
 
 });
 
 
 
-app.listen(3000, () => {
-    console.log('\n Server is running on port 3000');
+app.listen(3002, () => {
+    console.log('\n Server is running on port 3002');
 });
