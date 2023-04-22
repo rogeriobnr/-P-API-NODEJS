@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "": "echo \"Error: no test specified\" && exit 1"
+    "serve": "nodemon"
   },
   "keywords": [],
   "author": "",
