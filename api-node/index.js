@@ -21,6 +21,14 @@ app.get('/users', (req, res) => {
     return res.json(users);
 
 });
+app.post('/users/:id', (req, res) => {
+
+    //get all user's requirements from DOM
+    const users = {...req.body};
+    return res.json(users);
+
+});
+
 
 
 
