@@ -21,16 +21,61 @@ app.get('/users', (req, res) => {
     return res.json(users);
 
 });
-app.post('/users/:id', (req, res) => {
+/**
+ * GET /users by id
+ */
+app.get('/users/:id', (req, res) => {
 
-    //get all user's requirements from DOM
-    const users = {...req.body};
+    //extract all user's requirements from DOM to database
+    const idUsers = req.params
+    return res.json(idUsers);
+
+});
+
+/**
+ * POST /users by id 
+ */
+
+app.post('/users', (req, res) => {
+
+    //extract all user's requirements from DOM to database
+    const users = { ...req.body };
     return res.json(users);
 
 });
 
+/**
+ * PUT /users by id
+ */
 
+app.put('/users/:id', (req, res) => {
 
+    /**
+        Put all user's requirements from DOM to database.
+    */
+    const idUser = req.params;
+    const users = { ...req.body };
+    return res.json(users);
+
+});
+
+/**
+ * DELETE /users byid
+ */
+
+app.delete('/users/:id', (req, res) => {
+
+    /**
+        deleting all user's propriety from database
+    */
+    const idUsers = req.params;
+    return res.json(idUsers);
+
+});
+
+/**
+ * Lists all users in the database to localhost
+ */
 
 app.listen(3002, () => {
     console.log('\n Server is running on port 3002');
