@@ -36,4 +36,5 @@ $$$ PARA ESSE:
 -->
 npm install nodemon -D
 
-<!--  -->
+<!-- install consign dependence's module -->
+ npm install consign
