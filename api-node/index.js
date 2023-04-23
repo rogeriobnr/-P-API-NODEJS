@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const consign = require('consign');
 
+consign()
+    .then("./api")
+    .then("./routes/routes.js")
+    .into(app)
 
 
 app.listen(3002, () => {
