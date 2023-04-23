@@ -8,5 +8,8 @@ module.exports = (app) => {
         .get(app.api.categories.read)
         .post(app.api.categories.save)
 
+    app.route("/categories/:id")
+        .delete(app.api.categories.remove)
+
 
 } 

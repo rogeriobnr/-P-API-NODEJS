@@ -7,9 +7,6 @@ module.exports = (app) => {
             .database('categories')
             .select("*")
 
-        if (categories.select) {
-            return res.status(200).json({ Mensagem: "Lista exibida" });
-        }
         return res.json(categories);
     }
     /**
@@ -45,5 +42,32 @@ module.exports = (app) => {
 
 
     }
-    return { read, save };
+    /**
+     * Delete the register user by id from the database
+     */
+    const remove = async (req, res) => {
+
+        const idCategory = req.params.id;
+
+        if (!idCategory) {
+            return res.status(400).json({ error: "Id não informado" });
+        }
+
+        const categoryExists = app.database('categories').where({ id: idCategory }).first();
+        if (!categoryExists) {
+            return res.status(400).json({ error: "Id não encontrado" });
+        }
+        app.database('categories').where({ id: idCategory }).del();
+        return res.status(204).send();
+    }
+    // /**
+    //  * Creation of the Update Method to update the user's insertions into the database.
+    //  */
+    // const update = async (req, res) => {
+    //     const { id } = req.params;
+    //     const { name } = req.body;
+    //     const { image } = req.body;
+    //     const category = { id, name, image };
+
+    return { read, save, remove }
 }
