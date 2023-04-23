@@ -27,8 +27,8 @@ module.exports = () => {
      * Creation of the Save Method to record the user's insertions into the database.
      */
     const save = (req, res) => {
-        const users = { ...req.body };
-        return res.json(users)
+        const user = { ...req.body };
+        return res.json(user)
 
     }
 
