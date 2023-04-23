@@ -1,5 +1,11 @@
 module.exports = () => {
 
+    /**
+     *  Creation of the route to use the GET method and list the added users.
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     const list = (req, res) => {
         const users = [
             {
@@ -17,6 +23,15 @@ module.exports = () => {
         ];
         return res.json(users);
     }
+    /**
+     * Creation of the Save Method to record the user's insertions into the database.
+     */
+    const save = (req, res) => {
+        const users = { ...req.body };
+        return res.json(users)
 
-    return { list };
+    }
+
+
+    return { list ,save };
 }
