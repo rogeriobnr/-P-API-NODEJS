@@ -1,10 +1,10 @@
 module.exports = {
     client: "mysql2",
-    conection: {
-        host: "apinode",
+    connection: {
+        host: "localhost",
         user: "root",
-        password: " ",
-        database: "test"
+        password: "",
+        database: "apinode"
     },
     pool: {
         min: 2,
