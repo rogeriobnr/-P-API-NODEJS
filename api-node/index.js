@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const consign = require('consign');
-const database = require('./config/database')
+const database = require('./config/database.js');
 
 app.use(express.json());
 app.database = database;
