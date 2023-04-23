@@ -27,7 +27,7 @@ module.exports = (app) => {
         return res.json(category);
     }
     /**
-     * Creation of the Save Method to record the user's insertions into the database.
+     *Creation of the Save and Update method to record and change user insertions in the database.
      */
     const save = async (req, res) => {
         const category = { ...req.body };
