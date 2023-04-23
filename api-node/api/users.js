@@ -1,6 +1,6 @@
 module.exports = () => {
 
-    const get = (req, res) => {
+    const list = (req, res) => {
         const users = [
             {
                 id: 1,
@@ -17,6 +17,6 @@ module.exports = () => {
         ];
         return res.json(users);
     }
-    
-    return { get };
+
+    return { list };
 }
